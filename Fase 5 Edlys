@@ -1,0 +1,32 @@
+# Primer paso generar la funcion
+def contar_peliculas(matriz, nota_minima, año_minimo):
+    conteo = 0
+
+    # generar el recorrido de la matriz
+    for pelicula in matriz:
+        año = pelicula[2]
+        nota = pelicula[1]
+
+        # ahora si aplicar la logica
+        if nota >= nota_minima and año >= año_minimo:
+            conteo += 1
+    return conteo
+
+# Ahora si crear los datos a evaluar
+peliculas = [
+    ["Crepusculo", 5.2, 2008, "Romance"],
+    ["Cincuenta sombras de Grey", 4.1, 2015, "Romance"],
+    ["Harry Potter", 7.8, 2001, "Fantasia"],
+    ["Rapidos y Furiosos", 6.5, 2010, "Accion"],
+    ["Piratas del Caribe", 7.3, 2003, "Aventura"],
+    ["Terremoto_falla_de_san_andres", 6.1, 2015, "Accion"],
+    ["No_te_preocupes_cariño", 4.8, 2016, "Suspenso"]
+]
+
+# Definir los rangos de busqueda
+nota_minima = 6.0
+año_minimo = 2010
+
+# llamar a la funcion y mostrar el resultado
+resultado = contar_peliculas(peliculas, nota_minima, año_minimo)
+print(f"El numero de peliculas que cumplen con los criterios es: {resultado}")
